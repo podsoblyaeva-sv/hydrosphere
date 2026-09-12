@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-﻿<title>Гидросфера</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Гидросфера</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Nunito:wght@0,400;0,600;0,700&display=swap">
 <script src="./vendor/three.min.js"></script>
 <style>
@@ -209,6 +209,7 @@ img{border-radius:10px;width:100%;height:auto;display:block}
 .tl-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
 </style>
 
+<link rel="stylesheet" href="./responsive_v2.css">
 </head>
 <body>
 <header class="header">
@@ -857,7 +858,7 @@ function init3D() {
 
   // ── Camera orbit ──
   let drag = false, px = 0, py = 0;
-  let th = -0.3, ph = Math.PI / 4.5, rad = 50;
+  let th = -0.3, ph = Math.PI / 4.5, rad = 85;
   const tgt = new THREE.Vector3(5, 6, 0);
 
   function updCam() {
@@ -880,7 +881,7 @@ function init3D() {
   wrap3.addEventListener('pointerup', () => drag = false);
   wrap3.addEventListener('pointerleave', () => drag = false);
   wrap3.addEventListener('wheel', e => {
-    rad = Math.max(20, Math.min(90, rad + e.deltaY * 0.04));
+    rad = Math.max(20, Math.min(140, rad + e.deltaY * 0.04));
     updCam(); e.preventDefault();
   }, { passive: false });
 

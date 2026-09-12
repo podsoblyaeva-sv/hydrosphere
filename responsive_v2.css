@@ -1,0 +1,58 @@
+/* Адаптация для телефонов. Вертикальная прокрутка сохраняет читаемый размер текста. */
+html { -webkit-text-size-adjust: 100%; scroll-padding-bottom: 96px; }
+body { overflow-x: visible; padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); }
+.content, .panel, .card, .quiz-opt, .zoom-bar-wrap { min-width: 0; }
+.content { width: 100%; }
+.panel { overflow-wrap: anywhere; }
+.tabs { padding-left: env(safe-area-inset-left, 0px); padding-right: env(safe-area-inset-right, 0px); }
+.tab-btn { min-width: 0; min-height: 48px; }
+.quiz-opt { width: 100%; text-align: left; font-family: inherit; }
+.stg-btn, .quiz-next { min-height: 44px; }
+.comp-cards, .renewal-grid, .facts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.fact-card { height: auto; min-width: 0; }
+.fact-inner { display: grid; height: auto; min-height: 180px; }
+.fact-front, .fact-back { position: relative; inset: auto; grid-area: 1 / 1; min-width: 0; }
+.fb-text { overflow-wrap: anywhere; }
+.audio-btn { position: absolute; top: 14px; right: max(12px, env(safe-area-inset-right, 0px)); bottom: auto; width: 44px; height: 44px; }
+.header { padding-left: max(64px, env(safe-area-inset-left, 0px)); padding-right: max(64px, env(safe-area-inset-right, 0px)); }
+.three-wrap { height: clamp(250px, 48svh, 420px); }
+.three-legend { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.tl-item { min-width: 0; }
+@media (max-width: 600px) {
+  .header { padding-top: 20px; padding-bottom: 35px; }
+  .header h1 { font-size: clamp(1.1rem, 5.5vw, 1.5rem); }
+  .header p { font-size: .82rem; }
+  .content { padding: 16px 12px; }
+  .card, .def-box, .analogy { padding: 16px; }
+  .def-box p, .cycle-info p, .quiz-opt { font-size: .94rem; }
+  .cc-desc, .fb-text, .rc-label, .analogy-label, .three-info p { font-size: .85rem; }
+  .fact-front, .fact-back { padding: 12px; }
+  .facts-grid, .comp-cards { gap: 10px; }
+  .cc-body { padding: 10px 8px; }
+  .three-stage-btns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .stg-btn { padding: 8px 4px; font-size: .76rem; }
+  .three-hint { font-size: .8rem; line-height: 1.4; }
+  .three-info { padding: 14px; }
+  .tl-item, .zoom-label, .zoom-pct { font-size: .76rem; }
+  .zoom-label { width: 82px; }
+  .zoom-row { gap: 6px; }
+  .zoom-bar-fill { font-size: 0; padding: 0; }
+  .analogy-items { gap: 8px; }
+  .analogy-item { flex: 1; min-width: 0; }
+  .quiz-opt { padding: 12px; gap: 10px; }
+  .quiz-question { font-size: 1rem; }
+  .quiz-result { padding: 24px 12px; }
+  .quiz-next { font-size: .9rem; }
+  .hotspot { padding: 7px; margin: -7px; }
+}
+@media (max-width: 350px) {
+  .facts-grid { grid-template-columns: minmax(0, 1fr); }
+  .fact-inner { min-height: 170px; }
+  .renewal-card { padding: 12px 8px; }
+  .content { padding-left: 10px; padding-right: 10px; }
+  .tab-btn { font-size: .65rem; padding-left: 1px; padding-right: 1px; }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .header { padding-top: 12px; padding-bottom: 24px; }
+  .three-wrap { height: 300px; }
+}
