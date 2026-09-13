@@ -56,3 +56,12 @@ body { overflow-x: visible; padding-bottom: calc(88px + env(safe-area-inset-bott
   .header { padding-top: 12px; padding-bottom: 24px; }
   .three-wrap { height: 300px; }
 }
+
+.narration-controls { margin: 0 0 14px; padding: 12px; border-radius: 14px; background: var(--card); border: 1px solid var(--card-border); }
+.narration-button { display: block; width: 100%; min-height: 46px; padding: 12px 10px; border: 0; border-radius: 10px; background: var(--ocean); color: white; font: 700 .95rem 'Nunito',sans-serif; cursor: pointer; }
+.narration-button[aria-pressed="true"] { background: #a83517; }
+.narration-button:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+.narration-status { margin-top: 8px; color: var(--txt2); font-size: .85rem; line-height: 1.4; text-align: center; }
+.narration-progress { display: block; width: 100%; height: 7px; margin-top: 9px; accent-color: var(--water); }
+.narration-controls[hidden], .narration-progress[hidden] { display: none; }
+.stg-btn.narrating { background: var(--sun); color: #023047; border-color: var(--sun-deep); box-shadow: 0 0 0 2px var(--sun); }
